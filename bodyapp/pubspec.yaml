@@ -33,4 +33,8 @@ flutter:
   assets:
     - design/screens/
     - assets/images/
-    
+
+  fonts:
+    - family: Rokkitt     
+      fonts:
+        - asset: assets/fonts/Rokkitt-Regular.ttf
