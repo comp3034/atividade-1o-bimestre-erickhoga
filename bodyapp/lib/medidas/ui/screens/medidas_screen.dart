@@ -30,8 +30,8 @@ class MedidasScreen extends StatelessWidget {
               child: Text('atualizado em ${DateTime.now()}'),
             ),
             Positioned(
-              right: 48,
-              top: 48,
+              right: MediaQuery.of(context).size.width * (10 / 568),
+              top: MediaQuery.of(context).size.height * (23 / 568),
               child: Row(
                 children: [
                   MeasureLabelWidget(
@@ -39,7 +39,10 @@ class MedidasScreen extends StatelessWidget {
                     value: '170',
                     measure: 'cm',
                   ),
-                  SizedBox(width: 16),
+                  SizedBox(
+                    width: 16,
+                    height: 20,
+                  ),
                   MeasureLabelWidget(
                     label: 'Peso',
                     value: '70',
@@ -49,18 +52,58 @@ class MedidasScreen extends StatelessWidget {
               ),
             ),
             NestedMeasureWidget(
-              top: 188,
-              left: 0,
+              top: MediaQuery.of(context).size.height * (105 / 568),
+              left: MediaQuery.of(context).size.height * (0 / 568),
               width: width * .5,
               label: 'Pescoço',
               value: '95',
               measure: ' cm',
             ),
             NestedMeasureWidget(
-              top: 188 + 48,
-              left: 0,
-              width: width * .6,
+              top: MediaQuery.of(context).size.height * (150 / 568),
+              left: MediaQuery.of(context).size.height * (2 / 568),
+              width: width * .7,
               label: 'Peito',
+              value: '95',
+              measure: ' cm',
+            ),
+            NestedMeasureWidget(
+              top: MediaQuery.of(context).size.height * (183 / 568),
+              left: MediaQuery.of(context).size.height * (40 / 568),
+              width: width * .4,
+              label: 'Biceps',
+              value: '95',
+              measure: ' cm',
+            ),
+            NestedMeasureWidget(
+              top: MediaQuery.of(context).size.height * (220 / 568),
+              left: MediaQuery.of(context).size.height * (2 / 568),
+              width: width * .7,
+              label: 'Cintura',
+              value: '95',
+              measure: ' cm',
+            ),
+            NestedMeasureWidget(
+              top: MediaQuery.of(context).size.height * (255 / 568),
+              left: MediaQuery.of(context).size.height * (10 / 568),
+              width: width * .5,
+              label: 'Quadril',
+              value: '95',
+              measure: ' cm',
+            ),
+            NestedMeasureWidget(
+              top: MediaQuery.of(context).size.height * (310 / 568),
+              left: MediaQuery.of(context).size.height * (10 / 568),
+              width: width * .7,
+              label: 'Coxa',
+              value: '95',
+              measure: ' cm',
+            ),
+            NestedMeasureWidget(
+              top: MediaQuery.of(context).size.height * (380 / 568),
+              left: MediaQuery.of(context).size.height * (10 / 568),
+              width: width * .5,
+              label: 'Panturrilha',
               value: '95',
               measure: ' cm',
             ),
@@ -146,13 +189,12 @@ class MeasureLabelWidget extends StatelessWidget {
           text: TextSpan(
             text: '$value',
             style: TextStyle(
-              fontSize: 36,
-            ),
+                fontSize: 36, color: Colors.black, fontWeight: FontWeight.bold),
             children: [
               TextSpan(
                 text: ' $measure',
                 style: TextStyle(
-                  fontSize: 12,
+                  fontSize: 11,
                 ),
               ),
             ],
